@@ -44,3 +44,44 @@ add_theme_support('custom-header');
 add_theme_support('post-thumbnails');
 
 add_theme_support('post-formats', ['aside', 'image', 'video']);
+
+	/*
+		=================================
+			Sidebar function
+		=================================
+	*/	
+
+function awesome_widget_setup(){
+	/**
+	 * Creates a sidebar
+	 * @param string|array  Builds Sidebar based off of 'name' and 'id' values.
+	 */
+	$side_args = array(
+		'name'          => 'Sidebar',
+		'id'            => 'sidebar-1',
+		'description'   => 'Standard sidebar',
+		'class'         => 'custom', // sidebar-custom
+		'before_widget' => '<aside id="%1" class="widget %2">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>',
+	);
+	
+	register_sidebar( $side_args );
+
+	$side_args1 = [
+		'name' => 'Sidebar-menu',
+		'id' => 'sidebar-2',
+		'description' => 'Menu Sidebar',
+		'class' => 'custom-menu-sidebar',
+		'before_widget' => '<aside id="%1" class="widget%2">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h2 class="widgettitle">',
+		'after_title' => '</h2>',
+	];
+
+	register_sidebar($side_args1);
+	
+}
+
+add_action('widgets_init','awesome_widget_setup');
