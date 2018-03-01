@@ -52,8 +52,11 @@
 				</nav>
 
 			</div>
-			<div class="search-form-container">
-				<?php get_search_form(); ?>
+
+			<div class="col-xs-12">
+				<div class="search-form-container">
+					<?php get_search_form(); ?>
+				</div>
 			</div>
 		</div>
 	

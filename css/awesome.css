@@ -48,3 +48,12 @@
 .third-row-padding:nth-child(4){
 	padding-left:15px;
 }
+
+/* header search form */
+.search-form-container {
+	display:none;
+}
+
+.open-search {
+	cursor:pointer;
+}
